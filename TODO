@@ -1,0 +1,25 @@
+发送Dockerfile base64 的 http方法改为POST
+
+获取websocket连续build日志
+获取http历史build日志
+
+保存push log
+
+修改保存数据方法 兼容MySQL 后期迁移
+消息订阅依然使用redis
+
+接收post的build dockerfile 保存在 channel 队列中
+channel逐一分配 build 资源和任务，没有的就在等
+
+增加 删除 deamon 
+
+增加下面两个接口的 deamon 信息访问
+Display system-wide information(判断deamon是否或者)(周期性访问)
+Show the docker version information(返回deamon版本)
+增加deamon 统计信息(总数，闲置，工作中，异常)
+正在等待的工作，正在进行的工作，已经完成的工作，已经失败的工作 
+build开始和结束的时间
+
+/conf/pool.json 放到 InitHandlerList
+
+InitHandlerList 放到 modules
